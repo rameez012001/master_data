@@ -11,23 +11,23 @@ entity RawMaterialMaster {
     key rawMaterialCode        : String(10);
         rawMaterialDescription : String(100);
 
-        rawMaterialAssignment    : Composition of many RawMaterialAssignment
-                                   on rawMaterialAssignment.rawMaterialMaster = $self;
+        rawMaterialAssignment  : Composition of many RawMaterialAssignment
+                                     on rawMaterialAssignment.rawMaterialMaster = $self;
 
         commodityCode          : Association to CommodityMaster;
 }
 
 entity RawMaterialAssignment {
-    key ID             : UUID;
+    key ID                : UUID;
 
-        vendor         : String(10);
-        plant          : String(10);
-        material       : String(20);
+        vendor            : String(10);
+        plant             : String(10);
+        material          : String(20);
 
-        rawMaterialMaster    : Association to RawMaterialMaster;
+        rawMaterialMaster : Association to RawMaterialMaster;
 
-        rawMaterialUOM : String(10);
-        rawMaterialQty : Decimal(13, 3);
+        rawMaterialUOM    : String(10);
+        rawMaterialQty    : Decimal(13, 3);
 }
 
 entity MaterialCostingSheet {
