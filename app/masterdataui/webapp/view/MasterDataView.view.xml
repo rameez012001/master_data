@@ -1,6 +1,477 @@
-<mvc:View controllerName="masterdataui.controller.MasterDataView"
+<mvc:View
+    controllerName="masterdataui.controller.MasterDataView"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <App
+        id="dmApp"
+        class="dmApp"
+    >
+        <pages>
+            <Page
+                id="mainPage"
+                showHeader="true"
+                class="dmMainPage"
+            >
+                <customHeader>
+                    <Toolbar class="dmHeader">
+                        <Button
+                            id="menuBtn"
+                            icon="sap-icon://menu2"
+                            type="Transparent"
+                            press="onMenuToggle"
+                            class="dmMenuBtn"
+                        />
+
+                        <Image
+                            src="src\logo.png"
+                            width="28px"
+                            height="28px"
+                            class="dmHeaderLogo"
+                        />
+
+                        <Title
+                            text="Master Data Management"
+                            level="H4"
+                            class="dmHeaderTitle"
+                        />
+
+                        <ToolbarSpacer />
+
+                        <Button
+                            text="AK"
+                            type="Transparent"
+                            press="onAvatarPress"
+                            class="dmAvatarBtn"
+                        />
+                    </Toolbar>
+                </customHeader>
+
+                <content>
+                    <Button
+                        id="drawerOverlay"
+                        press="onOverlayPress"
+                        type="Transparent"
+                        class="dmDrawerOverlay dmHidden"
+                    />
+
+                    <VBox
+                        id="drawerPanel"
+                        class="dmDrawer dmDrawerClosed"
+                    >
+                        <core:HTML
+                            content='&lt;div class="dmNavSection"&gt;TABLES&lt;/div&gt;'
+                        />
+
+                        <Button
+                            id="btnTable1"
+                            text="Commodity Master"
+                            icon="sap-icon://group"
+                            type="Transparent"
+                            press="onTableNav"
+                            class="dmNavBtn dmNavBtnActive"
+                        />
+
+                        <Button
+                            id="btnTable2"
+                            text="RawMaterial Master"
+                            icon="sap-icon://product"
+                            type="Transparent"
+                            press="onTableNav"
+                            class="dmNavBtn"
+                        />
+
+                        <Button
+                            id="btnTable3"
+                            text="RawMaterial Assignment"
+                            icon="sap-icon://quality-issue"
+                            type="Transparent"
+                            press="onTableNav"
+                            class="dmNavBtn"
+                        />
+
+                        <Button
+                            id="btnTable4"
+                            text="MaterialCosting Sheet"
+                            icon="sap-icon://workflow-tasks"
+                            type="Transparent"
+                            press="onTableNav"
+                            class="dmNavBtn"
+                        />
+
+                        <VBox
+                            class="sapUiSmallMarginTop"
+                            height="100%"
+                        />
+
+                        <HBox class="dmDrawerFooter">
+                            <Avatar
+                                initials="AK"
+                                class="dmDrawerFooterAvatar"
+                            />
+                            <VBox class="dmDrawerFooterInfo">
+                                <Text text="Arjun Kumar" />
+                                <Text text="Master User" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+
+                    <VBox
+                        id="mainContent"
+                        class="dmContent"
+                    >
+                        <Carousel
+                            id="mainCarousel"
+                            height="340px"
+                            loop="true"
+                            showPageIndicator="false"
+                            class="dmCarousel"
+                        >
+                            <pages>
+                                <Page
+                                    showHeader="false"
+                                    class="dmSlide dmSlide1"
+                                >
+                                    <content>
+                                        <VBox class="dmSlideContent">
+                                            <Title
+                                                level="H2"
+                                                text="Material Pricing"
+                                                class="dmSlideTitle"
+                                            />
+                                            <Text
+                                                text="Centralise and govern your enterprise master data in one place."
+                                                class="dmSlideDesc"
+                                            />
+                                        </VBox>
+                                    </content>
+                                </Page>
+
+                                <Page
+                                    showHeader="false"
+                                    class="dmSlide dmSlide2"
+                                >
+                                    <content>
+                                        <VBox class="dmSlideContent">
+                                            <Title
+                                                level="H2"
+                                                text="Data Quality Centre"
+                                                class="dmSlideTitle"
+                                            />
+                                            <Text
+                                                text="Define, validate, and enforce data quality rules across all domains."
+                                                class="dmSlideDesc"
+                                            />
+                                        </VBox>
+                                    </content>
+                                </Page>
+
+                                <Page
+                                    showHeader="false"
+                                    class="dmSlide dmSlide3"
+                                >
+                                    <content>
+                                        <VBox class="dmSlideContent">
+                                            <Title
+                                                level="H2"
+                                                text="Workflow Automation"
+                                                class="dmSlideTitle"
+                                            />
+                                            <Text
+                                                text="Streamline approvals and change requests with intelligent routing."
+                                                class="dmSlideDesc"
+                                            />
+                                        </VBox>
+                                    </content>
+                                </Page>
+                            </pages>
+                        </Carousel>
+
+                        <FlexBox
+                            wrap="Wrap"
+                            class="dmTileRow"
+                            renderType="Bare"
+                        >
+                            <GenericTile
+                                header="Commodity Master"
+                                subheader="Stores commodity categories."
+                                frameType="OneByOne"
+                                press="onAccessTool"
+                                class="dmTile"
+                            >
+                                <tileContent>
+                                    <TileContent>
+                                        <content>
+                                            <ImageContent
+                                                src="sap-icon://employee"
+                                            />
+                                        </content>
+                                    </TileContent>
+                                </tileContent>
+                            </GenericTile>
+
+                            <GenericTile
+                                header="RawMaterial Master"
+                                subheader="Stores raw material details."
+                                frameType="OneByOne"
+                                press="onAccessTool"
+                                class="dmTile"
+                            >
+                                <tileContent>
+                                    <TileContent>
+                                        <content>
+                                            <ImageContent
+                                                src="sap-icon://product"
+                                            />
+                                        </content>
+                                    </TileContent>
+                                </tileContent>
+                            </GenericTile>
+
+                            <GenericTile
+                                header="RawMaterial Assignment"
+                                subheader="Links raw materials to commodities."
+                                frameType="OneByOne"
+                                press="onAccessTool"
+                                class="dmTile"
+                            >
+                                <tileContent>
+                                    <TileContent>
+                                        <content>
+                                            <ImageContent
+                                                src="sap-icon://sales-order"
+                                            />
+                                        </content>
+                                    </TileContent>
+                                </tileContent>
+                            </GenericTile>
+
+                            <GenericTile
+                                header="MaterialCosting Sheet"
+                                subheader="Stores material cost details."
+                                frameType="OneByOne"
+                                press="onAccessTool"
+                                class="dmTile"
+                            >
+                                <tileContent>
+                                    <TileContent>
+                                        <content>
+                                            <ImageContent
+                                                src="sap-icon://supplier"
+                                            />
+                                        </content>
+                                    </TileContent>
+                                </tileContent>
+                            </GenericTile>
+                        </FlexBox>
+
+                        <VBox
+                            id="tableArea"
+                            class="dmTableArea dmTableAreaHidden"
+                        >
+                            <VBox
+                                id="tablePanel1"
+                                class="dmTableContainer"
+                            >
+                                <Toolbar class="dmTableToolbar">
+                                    <Title
+                                        text="Commodity Master"
+                                        level="H4"
+                                        class="dmTableTitle"
+                                    />
+                                    <ToolbarSpacer />
+                                    <SearchField
+                                        width="200px"
+                                        placeholder="Search..."
+                                    />
+                                     
+                                </Toolbar>
+
+                                <Table
+                                    class="dmTable"
+                                    items="{/businessPartners}"
+                                    alternateRowColors="true"
+                                >
+                                    <columns>
+                                        <Column>
+                                            <Text text="ID" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Name" />
+                                        </Column>                                        
+                                    </columns>
+
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{id}" />
+                                                <Text text="{name}" />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </VBox>
+
+                            <VBox
+                                id="tablePanel2"
+                                class="dmTableContainer dmHidePanel"
+                            >
+                                <Toolbar class="dmTableToolbar">
+                                    <Title
+                                        text="RawMaterial Master"
+                                        level="H4"
+                                        class="dmTableTitle"
+                                    />
+                                    <ToolbarSpacer />
+                                    <SearchField
+                                        width="200px"
+                                        placeholder="Search..."
+                                    />
+                                     
+                                </Toolbar>
+
+                                  <Table
+                                    class="dmTable"
+                                    items="{/businessPartners}"
+                                    alternateRowColors="true"
+                                >
+                                    <columns>
+                                        <Column>
+                                            <Text text="ID" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Name" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Type" />
+                                        </Column>                                       
+                                    </columns>
+
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{id}" />
+                                                <Text text="{name}" />
+                                                <Text text="{type}" />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </VBox>
+
+                            <VBox
+                                id="tablePanel3"
+                                class="dmTableContainer dmHidePanel"
+                            >
+                                <Toolbar class="dmTableToolbar">
+                                    <Title
+                                        text="RawMaterial Assignment"
+                                        level="H4"
+                                        class="dmTableTitle"
+                                    />
+                                    <ToolbarSpacer />
+                                    <SearchField
+                                        width="200px"
+                                        placeholder="Search..."
+                                    />
+                                     
+                                </Toolbar>
+
+                                   <Table
+                                    class="dmTable"
+                                    items="{/businessPartners}"
+                                    alternateRowColors="true"
+                                >
+                                    <columns>
+                                        <Column>
+                                            <Text text="ID" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Name" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Type" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Country" />
+                                        </Column>
+                                    </columns>
+
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{id}" />
+                                                <Text text="{name}" />
+                                                <Text text="{type}" />
+                                                <Text text="{country}" />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </VBox>
+
+                            <VBox
+                                id="tablePanel4"
+                                class="dmTableContainer dmHidePanel"
+                            >
+                                <Toolbar class="dmTableToolbar">
+                                    <Title
+                                        text="MaterialCosting Sheet"
+                                        level="H4"
+                                        class="dmTableTitle"
+                                    />
+                                    <ToolbarSpacer />
+                                    <SearchField
+                                        width="200px"
+                                        placeholder="Search..."
+                                    />
+                                     
+                                </Toolbar>
+
+                                   <Table
+                                    class="dmTable"
+                                    items="{/businessPartners}"
+                                    alternateRowColors="true"
+                                >
+                                    <columns>
+                                        <Column>
+                                            <Text text="ID" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Name" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Type" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Country" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Status" />
+                                        </Column>
+                                    </columns>
+
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{id}" />
+                                                <Text text="{name}" />
+                                                <Text text="{type}" />
+                                                <Text text="{country}" />
+                                                <ObjectStatus
+                                                    text="{status}"
+                                                    state="{statusState}"
+                                                />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+                </content>
+            </Page>
+        </pages>
+    </App>
 </mvc:View>

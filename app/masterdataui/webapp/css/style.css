@@ -1,1 +1,520 @@
-/* Enter your custom styles here */
+.dmApp.sapMApp,
+.dmMainPage.sapMPage,
+.dmMainPage > .sapMPageBg {
+    background: #f1f5f9 !important;
+}
+.dmMainPage .sapMPageHeader {
+    position: relative !important;
+    z-index: 100 !important;
+}
+.dmMainPage .sapMPageScroll {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.dmHeader.sapMTB {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    min-height: 3.5rem !important;
+    padding: 0 1rem !important;
+    z-index: 100 !important;
+    position: relative !important;
+}
+
+.dmMenuBtn.sapMBtn .sapMBtnInner {
+    background: #f8fafc !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    width: 36px !important;
+    height: 36px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.18s ease !important;
+    margin-right: 1rem !important;
+    margin-top: -0.2rem !important;
+}
+.dmMenuBtn.sapMBtn:hover .sapMBtnInner {
+    background: #eff6ff !important;
+    border-color: #3b82f6 !important;
+    transform: scale(1.04) !important;
+}
+.dmMenuBtn .sapUiIcon {
+    color: #374151 !important;
+    font-size: 1rem !important;
+}
+
+
+.dmHeaderTitle.sapMTitle {
+    font-size: 1.150rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.03em !important;
+    background: linear-gradient(90deg,#3a258c,#6540db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dmHeaderTitle.sapMTitle::before {
+    content: "◆ ";
+    color: #3a258c;
+    font-size: 0.8rem;
+}
+
+.dmAvatarBtn.sapMBtn .sapMBtnInner {
+    width: 2rem !important;
+    height: 2rem !important;
+    min-width: 2rem !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #2563eb, #0ea5e9) !important;
+    border: 2px solid #e2e8f0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin-right: 0.25rem !important;
+    box-shadow: 0 1px 4px rgba(37,99,235,0.3) !important;
+    transition: box-shadow 0.18s, transform 0.15s !important;
+}
+.dmAvatarBtn.sapMBtn:hover .sapMBtnInner {
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.25) !important;
+    transform: scale(1.06) !important;
+}
+.dmAvatarBtn .sapMBtnContent {
+    color: #fff !important;
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+}
+
+.dmHeaderLogo {
+    width: 48px !important;
+    height: 48px !important;
+    margin-right: 0.5rem;
+    margin-left: -0.5rem !important;
+    border-radius: 6px;
+}
+
+
+.dmDrawerOverlay.sapMBtn,
+.dmDrawerOverlay.sapMBtn .sapMBtnInner {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: rgba(15,23,42,0.40) !important;
+    backdrop-filter: blur(3px) !important;
+    z-index: 200 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.25s ease !important;
+}
+.dmDrawerOverlay.dmOverlayVisible.sapMBtn,
+.dmDrawerOverlay.dmOverlayVisible .sapMBtnInner {
+    opacity: 1 !important; pointer-events: all !important;
+}
+.dmDrawerOverlay.dmHidden.sapMBtn,
+.dmDrawerOverlay.dmHidden .sapMBtnInner {
+    opacity: 0 !important; pointer-events: none !important;
+}
+
+
+.dmDrawer {
+    position: fixed !important;
+    top: 3.5rem !important;
+    left: 0 !important;
+    height: calc(100% - 3.5rem) !important;
+    width: 260px !important;
+    background: #0f172a !important;
+    z-index: 300 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: transform 0.26s cubic-bezier(0.4,0,0.2,1) !important;
+    box-shadow: 8px 0 32px rgba(0,0,0,0.25) !important;
+    overflow: hidden !important;
+}
+.dmDrawerClosed { transform: translateX(-100%) !important; }
+.dmDrawerOpen   { transform: translateX(0) !important; }
+
+.dmNavSection {
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    color: #fdfeff !important;
+    padding: 1.1rem 1.1rem 0.3rem !important;
+    text-transform: uppercase !important;
+}
+
+.dmDrawerFooter {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.625rem !important;
+    padding: 0.85rem 1.1rem !important;
+    border-top: 1px solid rgba(255,255,255,0.06) !important;
+    background: rgba(255,255,255,0.02) !important;
+}
+.dmDrawerFooterAvatar {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #2563eb, #0ea5e9) !important;
+    box-shadow: 0 1px 6px rgba(37,99,235,0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.6rem !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    letter-spacing: 0.04em !important;
+    flex-shrink: 0 !important;
+}
+.dmDrawerFooterInfo {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important;
+    overflow: hidden !important;
+}
+.dmDrawerFooterInfo span {
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    color: #e2e8f0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+.dmDrawerFooterInfo small {
+    font-size: 0.65rem !important;
+    color: #475569 !important;
+    letter-spacing: 0.02em !important;
+}
+
+.dmContent {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    transition: margin-left 0.26s cubic-bezier(0.4,0,0.2,1),
+                width       0.26s cubic-bezier(0.4,0,0.2,1) !important;
+}
+.dmContentFull    { margin-left: 0 !important; width: 100% !important; }
+.dmContentShifted { margin-left: 260px !important; width: calc(100% - 260px) !important; }
+
+.dmCarousel.sapMCrsl {
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+.dmCarousel .sapMCrslInner { margin: 0 !important; padding: 0 !important; }
+
+.dmSlide, .dmSlide.sapMPage, .dmSlide.sapMCrslPage {
+    min-height: 340px !important;
+    margin: 0 !important; padding: 0 !important; border-radius: 0 !important;
+}
+.dmSlide > .sapMPageBg   { background: transparent !important; }
+.dmSlide .sapMPageScroll { height: 100% !important; overflow: hidden !important; }
+
+.dmSlide1, .dmSlide1.sapMPage, .dmSlide1.sapMCrslPage {
+    background: url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400&q=80") center/cover no-repeat !important;
+}
+.dmSlide2, .dmSlide2.sapMPage, .dmSlide2.sapMCrslPage {
+    background: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1400&q=80") center/cover no-repeat !important;
+}
+.dmSlide3, .dmSlide3.sapMPage, .dmSlide3.sapMCrslPage {
+    background: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1400&q=80") center/cover no-repeat !important;
+}
+
+.dmSlideContent {
+    height: 340px !important;
+    padding: 0 3rem 3rem !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.18) 55%, transparent 100%) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    box-sizing: border-box !important;
+}
+.dmSlideTitle.sapMTitle {
+    color: #fff !important;
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.025em !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+}
+.dmSlideDesc.sapMText {
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 0.9375rem !important;
+    margin-top: 6px !important;
+    max-width: 520px !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5) !important;
+    line-height: 1.55 !important;
+}
+.dmCarousel .sapMCrslHud > span {
+    background: rgba(255,255,255,0.15) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 50% !important;
+    color: #fff !important;
+    transition: background 0.18s !important;
+}
+.dmCarousel .sapMCrslHud > span:hover { background: rgba(255,255,255,0.30) !important; }
+
+
+.dmTileRow {
+    background: #f1f5f9 !important;
+    margin: 0 !important;
+    padding: 1.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1rem !important;
+}
+
+.dmTile.sapMGT {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 168px !important;
+    background: #ffffff !important;
+    border: 1px solid #ddd6fe !important;
+    border-radius: 10px !important;
+    box-shadow:
+        0 2px 6px rgba(58,37,140,0.07),
+        0 0 0 0 rgba(101,64,219,0) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    transition:
+        box-shadow 0.24s cubic-bezier(0.34,1.2,0.64,1),
+        transform  0.24s cubic-bezier(0.34,1.2,0.64,1),
+        border-color 0.2s ease !important;
+}
+
+.dmTile.sapMGT::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: linear-gradient(180deg, #3a258c 0%, #6540db 100%) !important;
+    border-radius: 10px 0 0 10px !important;
+    opacity: 1 !important;
+    transition: width 0.22s ease !important;
+}
+
+
+.dmTile.sapMGT::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    height: 56px !important;
+    background: linear-gradient(180deg, rgba(101,64,219,0.045) 0%, transparent 100%) !important;
+    pointer-events: none !important;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.dmTile.sapMGT:hover {
+    transform: translateY(-4px) scale(1.015) !important;
+    box-shadow:
+        0 10px 28px rgba(58,37,140,0.14),
+        0 2px 8px rgba(58,37,140,0.08) !important;
+    border-color: #a78bfa !important;
+    z-index: 2 !important;
+}
+
+.dmTile.sapMGT:hover::before {
+    width: 6px !important;
+}
+
+.dmTile.sapMGT .sapMGTContent,
+.dmTile.sapMGT .sapMGTHdrContent,
+.dmTile.sapMGT .sapMGTFtrContent {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.dmTile .sapMGTHdrTxt {
+    color: #1e1245 !important;
+    font-size: 0.9375rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    white-space: normal !important;
+}
+
+.dmTile .sapMGTSubHdrTxt {
+    color: #6b7280 !important;
+    font-size: 0.75rem !important;
+    line-height: 1.55 !important;
+    white-space: normal !important;
+    margin-top: 2px !important;
+}
+
+.dmTile .sapMGTIconImg .sapUiIcon,
+.dmTile .sapMGTContent .sapUiIcon {
+    color: #6540db !important;
+    font-size: 2rem !important;
+    transition: color 0.22s ease, transform 0.28s cubic-bezier(0.34,1.4,0.64,1) !important;
+    filter: drop-shadow(0 2px 6px rgba(101,64,219,0.22)) !important;
+}
+
+.dmTile.sapMGT:hover .sapMGTIconImg .sapUiIcon,
+.dmTile.sapMGT:hover .sapMGTContent .sapUiIcon {
+    color: #3a258c !important;
+    transform: scale(1.18) rotate(-4deg) !important;
+    filter: drop-shadow(0 4px 10px rgba(58,37,140,0.32)) !important;
+}
+@media (max-width: 900px) {
+    .dmTileRow { grid-template-columns: repeat(2, 1fr) !important; }
+    .dmContentShifted { margin-left: 0 !important; width: 100% !important; }
+}
+@media (max-width: 480px) {
+    .dmTileRow { grid-template-columns: 1fr !important; padding: 0.75rem !important; }
+    .dmSlideContent { padding: 0 1.25rem 2rem !important; }
+    .dmSlideTitle.sapMTitle { font-size: 1.3rem !important; }
+}
+.dmNavBtn.sapMBtn {
+    display: block !important;
+    width: calc(100% - 1.25rem) !important;
+    margin: 1px 0 1px 0.625rem !important;
+    border-radius: 8px !important;
+    border: none !important;
+    margin-bottom: 0.5rem !important;
+    background: transparent !important;
+}
+
+.dmNavBtn.sapMBtn .sapMBtnInner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.625rem !important;
+    width: 100% !important;
+    height: 2.5rem !important;
+    padding: 0 0.875rem !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    transition: background 0.15s ease, color 0.15s ease !important;
+}
+
+.dmDrawer {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dmNavBtn.sapMBtn .sapMBtnInner .sapUiIcon {
+    color: #94a3b8 !important;
+    font-size: 1rem !important;
+    width: 1.1rem !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+.dmNavBtn.sapMBtn .sapMBtnContent {
+    color: #94a3b8 !important;
+    font-size: 0.845rem !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.005em !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+}
+
+
+.dmNavBtn.sapMBtn:hover .sapMBtnInner {
+    background: rgba(255,255,255,0.07) !important;
+}
+.dmNavBtn.sapMBtn:hover .sapMBtnContent { color: #e2e8f0 !important; }
+.dmNavBtn.sapMBtn:hover .sapUiIcon      { color: #94a3b8 !important; }
+
+.dmNavBtn.dmNavBtnActive.sapMBtn {
+    width: 100% !important;
+    margin-left: 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    background: transparent !important;
+}
+.dmNavBtn.dmNavBtnActive.sapMBtn .sapMBtnInner {
+    background: rgba(59,130,246,0.15) !important;
+    padding-left: calc(0.875rem - 3px) !important;
+}
+.dmNavBtn.dmNavBtnActive.sapMBtn .sapMBtnContent {
+    color: #93c5fd !important;
+    font-weight: 600 !important;
+}
+.dmNavBtn.dmNavBtnActive.sapMBtn .sapUiIcon {
+    color: #60a5fa !important;
+}
+
+.dmTableArea {
+    position: fixed !important;
+    top: 3.5rem !important;
+    left: 260px !important;
+    width: calc(100vw - 260px) !important;
+    height: calc(100vh - 3.5rem) !important;
+    background: #f1f5f9 !important;
+    z-index: 250 !important;
+    padding: 1.25rem !important;
+    box-sizing: border-box !important;
+    overflow-y: auto !important;
+    transition: opacity 0.22s ease, transform 0.22s ease !important;
+}
+.dmTableAreaHidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateX(-8px) !important;
+}
+.dmHidePanel { display: none !important; }
+
+
+.dmTableContainer {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
+    overflow: hidden !important;
+}
+
+
+.dmTableToolbar.sapMTB {
+    background: #ffffff !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    padding: 0 1rem !important;
+    min-height: 3.25rem !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+.dmTableTitle.sapMTitle {
+    color: #0f172a !important;
+    font-size: 0.9375rem !important;
+    font-weight: 700 !important;
+}
+.dmTableAddBtn.sapMBtn .sapMBtnInner {
+    border-radius: 8px !important;
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    height: 1.5rem !important;
+}
+
+.dmTable.sapMList { border-radius: 0 0 12px 12px !important; }
+.dmTable .sapMListTblHeader {
+    background: #f8fafc !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+}
+.dmTable .sapMListTblHeaderCell {
+    color: #475569 !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.07em !important;
+    padding: 0.65rem 1rem !important;
+}
+.dmTable .sapMListTblRow:hover { background: #eff6ff !important; }
+.dmTable .sapMText { color: #334155 !important; font-size: 0.8375rem !important; }
